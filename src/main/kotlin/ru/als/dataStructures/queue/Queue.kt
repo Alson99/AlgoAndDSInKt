@@ -1,4 +1,4 @@
-package ru.als.complexity.dataStructures.queue
+package ru.als.dataStructures.queue
 
 interface Queue<T : Any> {
     fun enqueue(element: T): Boolean

@@ -1,4 +1,4 @@
-package ru.als.complexity.dataStructures.trees
+package ru.als.dataStructures.trees
 
 class BinarySearchTree<T : Comparable<T>> {
 

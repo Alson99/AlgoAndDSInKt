@@ -1,4 +1,4 @@
-package ru.als.complexity.dataStructures.queue
+package ru.als.dataStructures.queue
 
 class ArrayListQueue<T : Any> : Queue<T> {
     private val list = arrayListOf<T>()

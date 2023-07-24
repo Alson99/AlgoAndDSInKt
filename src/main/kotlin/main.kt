@@ -1,11 +1,11 @@
-import ru.als.complexity.complexity.TimeComplexity
-import ru.als.complexity.dataStructures.linkedList.LinkedList
-import ru.als.complexity.dataStructures.linkedList.Node
-import ru.als.complexity.dataStructures.queue.ArrayListQueue
-import ru.als.complexity.dataStructures.stack.StackImpl
-import ru.als.complexity.dataStructures.trees.BinaryNode
-import ru.als.complexity.dataStructures.trees.BinarySearchTree
-import ru.als.complexity.dataStructures.trees.TreeNode
+import ru.als.complexity.TimeComplexity
+import ru.als.dataStructures.linkedList.LinkedList
+import ru.als.dataStructures.linkedList.Node
+import ru.als.dataStructures.queue.ArrayListQueue
+import ru.als.dataStructures.stack.StackImpl
+import ru.als.dataStructures.trees.BinaryNode
+import ru.als.dataStructures.trees.BinarySearchTree
+import ru.als.dataStructures.trees.TreeNode
 
 fun main() {
     val timeComplexity = TimeComplexity()

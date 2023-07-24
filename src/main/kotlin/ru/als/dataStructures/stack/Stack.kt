@@ -1,4 +1,4 @@
-package ru.als.complexity.dataStructures.stack
+package ru.als.dataStructures.stack
 
 import com.sun.org.apache.xpath.internal.operations.Bool
 

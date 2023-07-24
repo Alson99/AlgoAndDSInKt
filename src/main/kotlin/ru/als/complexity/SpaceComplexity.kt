@@ -1,4 +1,4 @@
-package ru.als.complexity.complexity
+package ru.als.complexity
 
 class SpaceComplexity {
 

@@ -1,4 +1,4 @@
-package ru.als.complexity.dataStructures.trees
+package ru.als.dataStructures.trees
 
 typealias Visitor1<T> = (T) -> Unit
 class BinaryNode<T>(var value: T) {

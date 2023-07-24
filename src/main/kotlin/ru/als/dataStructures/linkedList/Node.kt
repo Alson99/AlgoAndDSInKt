@@ -1,4 +1,4 @@
-package ru.als.complexity.dataStructures.linkedList
+package ru.als.dataStructures.linkedList
 
 
 data class Node<T : Any>(var value: T, var next: Node<T>? = null){

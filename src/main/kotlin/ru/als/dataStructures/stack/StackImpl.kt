@@ -1,4 +1,4 @@
-package ru.als.complexity.dataStructures.stack
+package ru.als.dataStructures.stack
 
 class StackImpl<T : Any> : Stack<T> {
     private val storage = arrayListOf<T>()

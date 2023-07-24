@@ -1,4 +1,4 @@
-package ru.als.complexity.dataStructures.linkedList
+package ru.als.dataStructures.linkedList
 
 class LinkedList<T : Any> : Iterable<T>, Collection<T>, MutableIterable<T>, MutableCollection<T> {
     private var head: Node<T>? = null

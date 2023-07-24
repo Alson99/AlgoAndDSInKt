@@ -1,6 +1,6 @@
-package ru.als.complexity.dataStructures.trees
+package ru.als.dataStructures.trees
 
-import ru.als.complexity.dataStructures.queue.Queue
+import ru.als.dataStructures.queue.Queue
 
 class TreeNode<T>(val value: T) {
 

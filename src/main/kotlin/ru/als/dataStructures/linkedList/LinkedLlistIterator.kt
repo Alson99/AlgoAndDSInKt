@@ -1,4 +1,4 @@
-package ru.als.complexity.dataStructures.linkedList
+package ru.als.dataStructures.linkedList
 
 class LinkedListIterator<T : Any>(
     private val list: LinkedList<T>

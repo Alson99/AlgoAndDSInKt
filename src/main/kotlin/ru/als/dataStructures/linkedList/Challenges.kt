@@ -1,4 +1,4 @@
-package ru.als.complexity.dataStructures.linkedList
+package ru.als.dataStructures.linkedList
 
 class Challenges {
 
