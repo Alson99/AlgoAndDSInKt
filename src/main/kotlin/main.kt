@@ -1,6 +1,11 @@
 import ru.als.complexity.complexity.TimeComplexity
 import ru.als.complexity.dataStructures.linkedList.LinkedList
 import ru.als.complexity.dataStructures.linkedList.Node
+import ru.als.complexity.dataStructures.queue.ArrayListQueue
+import ru.als.complexity.dataStructures.stack.StackImpl
+import ru.als.complexity.dataStructures.trees.BinaryNode
+import ru.als.complexity.dataStructures.trees.BinarySearchTree
+import ru.als.complexity.dataStructures.trees.TreeNode
 
 fun main() {
     val timeComplexity = TimeComplexity()
@@ -84,5 +89,110 @@ fun main() {
     list3.printInReverse()
 
     println()
+
+    // Using stack right here
+    val stack1 = StackImpl<Int>().apply {
+        push(1)
+        push(2)
+        push(3)
+        push(4)
+    }
+    print(stack1)
+
+    val poppedElement = stack1.pop()
+    if (poppedElement != null){
+        println("Popped: $poppedElement")
+    }
+    print(stack1)
+
+    val list1 = listOf("A", "B", "C", "D")
+    val stack = StackImpl.create(list1)
+    print(stack)
+    println("Popped: ${stack.pop()}")
+
+    // Using Queue right here
+
+    val queue = ArrayListQueue<String>().apply {
+        enqueue("Fils")
+        enqueue("Alson")
+        enqueue("Brunel")
+    }
+
+    println(queue)
+    queue.dequeue()
+    println("Next up: ${queue.peek()}")
+
+
+    // Using trees
+    val tree = makeBeverageTree()
+    tree.forEachDepthFirst { println(it.value) }
+    //tree.forEachLevelOrder { println(it.value) }
+
+    val zero = BinaryNode(0)
+    val one = BinaryNode(1)
+    val five = BinaryNode(5)
+    val seven = BinaryNode(7)
+    val eight = BinaryNode(8)
+    val nine = BinaryNode(9)
+
+    seven.leftChild = one
+    one.rightChild = zero
+    one.rightChild = five
+    seven.rightChild = nine
+    nine.leftChild = eight
+
+    val tree1 = seven
+}
+
+fun makeBeverageTree(): TreeNode<String> {
+
+    val tree = TreeNode("Beverages")
+    val hot = TreeNode("hot")
+    val cold = TreeNode("cold")
+    val tea = TreeNode("tea")
+    val coffee = TreeNode("coffee")
+    val chocolate = TreeNode("cocoa")
+    val blackTea = TreeNode("black")
+    val greenTea = TreeNode("green")
+    val chaiTea = TreeNode("chai")
+    val soda = TreeNode("soda")
+    val milk = TreeNode("milk")
+    val gingerAle = TreeNode("ginger ale")
+    val bitterLemon = TreeNode("bitter lemon")
+
+    tree.add(hot)
+    tree.add(cold)
+
+    hot.add(tea)
+    hot.add(coffee)
+    hot.add(chocolate)
+
+    cold.add(soda)
+
+    cold.add(milk)
+    tea.add(blackTea)
+    tea.add(greenTea)
+    tea.add(chaiTea)
+    soda.add(gingerAle)
+    soda.add(bitterLemon)
+    return tree
+
+    // Here using Binary search
+    val bst = BinarySearchTree<Int>()
+    (0..4).forEach {
+        bst.insert(it)
+    }
+    println(bst)
+
+    val exempleTree = BinarySearchTree<Int>().apply {
+        insert(3)
+        insert(1)
+        insert(4)
+        insert(0)
+        insert(2)
+        insert(5)
+    }
+
+    println(exempleTree)
 
 }
