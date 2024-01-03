@@ -1,10 +1,34 @@
 package ru.als.dataStructures.trees
 
 typealias Visitor1<T> = (T) -> Unit
-class BinaryNode<T>(var value: T) {
+class BinaryNode<T: Comparable<T>>(var value: T) {
     var leftChild: BinaryNode<T>? = null
     var rightChild: BinaryNode<T>? = null
+    val isBinarySearchTree: Boolean
+        get() = isBST(this, min = null, max = null)
 
+    private fun isBST(tree: BinaryNode<T>?, min: T?, max: T?): Boolean {
+        tree ?: return true
+        if (min != null && tree.value <= min) {
+            return false
+        } else if (max != null && tree.value > max) {
+            return false
+        }
+
+        return isBST(tree.leftChild, min, tree.value) && isBST(tree.rightChild, tree.value, max)
+    }
+
+    override fun equals(other: Any?): Boolean {
+        return if (other != null && other is BinaryNode<*>) {
+            this.value == other.value &&
+                    this.leftChild == other.leftChild &&
+                    this.rightChild == other.rightChild
+        } else {
+            false
+        }
+    }
+    val mininum: BinaryNode<T>?
+        get() = leftChild?.mininum ?: this
 
     // Add diagram
     override fun toString() = diagram(this)
@@ -15,28 +39,29 @@ class BinaryNode<T>(var value: T) {
         root: String = "",
         bottom: String = ""
     ): String {
-        return node?.let {
+        return node.let {
             if (node.leftChild == null && node.rightChild == null) {
                 "$root${node.value}\n"
             } else {
-                node.rightChild?.let { it1 -> diagram(it1, "$top", "$top┌──", "$top|") } +
+                node.rightChild?.let { it1 -> diagram(it1, top, "$top┌──", "$top|") } +
                         root + "${node.value}\n" + node.leftChild?.let { it1 ->
                     diagram(
                         it1,
-                        "$bottom|", "$bottom└──", "$bottom")
+                        "$bottom|", "$bottom└──", bottom
+                    )
                 }
-            }
-        } ?: "${root}null\n"
+            } ?: "${root}null\n"
+        }
     }
 
     fun traverseInOrder(visit: Visitor<T>) {
         leftChild?.traverseInOrder(visit)
-        //visit(value)
+        value
         rightChild?.traverseInOrder(visit)
     }
 
     fun traversePreOrder(visit: Visitor<T>) {
-        //visit(value)
+        value
         leftChild?.traversePreOrder(visit)
         rightChild?.traversePreOrder(visit)
     }
@@ -44,7 +69,7 @@ class BinaryNode<T>(var value: T) {
     fun traversePostOrder(visit: Visitor<T>) {
         leftChild?.traversePostOrder(visit)
         rightChild?.traversePostOrder(visit)
-        //visit(value)
+        value
     }
 
     val min: BinaryNode<T>?

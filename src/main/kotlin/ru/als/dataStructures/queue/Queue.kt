@@ -13,7 +13,4 @@ interface Queue<T : Any> {
 
     fun peek(): T?
 
-
-
-
 }

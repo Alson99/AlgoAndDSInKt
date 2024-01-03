@@ -60,7 +60,6 @@ class TimeComplexity {
     // Quasilinear time, Big O is O(n log n) and it's the multiplication of
     // linear and logarithmic
 
-
     // Comparing time complexity
     fun sumFromOne(n: Int): Int {
         var result = 0

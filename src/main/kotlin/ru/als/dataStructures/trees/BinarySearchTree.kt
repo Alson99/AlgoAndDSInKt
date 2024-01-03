@@ -22,8 +22,47 @@ class BinarySearchTree<T : Comparable<T>> {
         return node
     }
 
+/*    fun contains(value: T) : Boolean {
+        root?: return false
+        var found = false
+        root?.traverseInOrder {
+            if (value == it) {
+                found = true
+            }
+        }
+        return found
+    }*/
+
+    fun contains(value: T): Boolean {
+        var current = root
+        while(current != null) {
+            if (current.value == value) {
+                return true
+            }
+            current = if (value < current.value) {
+                current.leftChild
+            } else {
+                current.rightChild
+            }
+        }
+        return false
+    }
+
+    fun contains1(subtree: BinarySearchTree<T>) : Boolean {
+        val set = mutableSetOf<T>()
+        root?.traverseInOrder {
+            set.add(it.value)
+        }
+
+        var isEqual = true
+        subtree.root?.traverseInOrder {
+            isEqual = isEqual && set.contains(it.value)
+        }
+        return isEqual
+    }
+
     fun remove(value: T) {
-        //root = remove(root, value)
+        root = root?.let { remove(it, value) }
     }
 
     private fun remove(node: BinaryNode<T>, value: T) : BinaryNode<T>? {
@@ -39,8 +78,7 @@ class BinarySearchTree<T : Comparable<T>> {
                 if (node.rightChild == null) {
                     return node.leftChild
                 }
-
-                node.rightChild?.min?.value.let {
+                node.rightChild?.mininum?.value.let {
                     if (it != null) {
                         node.value = it
                     }

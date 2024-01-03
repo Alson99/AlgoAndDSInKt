@@ -28,7 +28,6 @@ class StackImpl<T : Any> : Stack<T> {
     override val count: Int
         get() = storage.size
 
-
     companion object {
         fun<T : Any> create(items: Iterable<T>) : Stack<T> {
             val stack = StackImpl<T>()

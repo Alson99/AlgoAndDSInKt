@@ -1,5 +1,7 @@
 package ru.als.dataStructures.trees
 
+import com.sun.jmx.remote.internal.ArrayQueue
+import ru.als.dataStructures.queue.ArrayListQueue
 import ru.als.dataStructures.queue.Queue
 
 class TreeNode<T>(val value: T) {
@@ -15,20 +17,18 @@ class TreeNode<T>(val value: T) {
         }
     }
 
-   /* fun forEachLevelOrder(visit: Visitor<T>) {
+    fun forEachLevelOrder(visit: Visitor<T>) {
         visit(this)
-        val queue = Queue<TreeNode<T>>()
+        val queue = ArrayListQueue<TreeNode<T>>()
         children.forEach{ queue.enqueue(it)}
-
         var node = queue.dequeue()
         while (node != null) {
             visit(node)
-            //node.children.forEach { queue.enqueue(it) }
+            node.children.forEach { queue.enqueue(it) }
             node = queue.dequeue()
         }
     }
-*/
-   /* fun search(value: T) : TreeNode<T>? {
+    fun search(value: T) : TreeNode<T>? {
         var result: TreeNode<T>? = null
 
         forEachLevelOrder {
@@ -37,7 +37,7 @@ class TreeNode<T>(val value: T) {
             }
         }
         return result
-    }*/
+    }
 }
 
 typealias Visitor<T> = (TreeNode<T>) -> Unit

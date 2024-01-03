@@ -6,6 +6,7 @@ class SpaceComplexity {
         val sorted = numbers.sorted()
         for (element in sorted){
             println(element)
+            
         }
     }
 

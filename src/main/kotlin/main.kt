@@ -126,8 +126,16 @@ fun main() {
     // Using trees
     val tree = makeBeverageTree()
     tree.forEachDepthFirst { println(it.value) }
-    //tree.forEachLevelOrder { println(it.value) }
+    tree.forEachLevelOrder { println(it.value) }
+    tree.search("ginger ale")?.let {
+        println("Found node: ${it.value}")
+    }
+    tree.search("WKD Blue")?.let {
+        println(it.value)
+    } ?: println("Couldn't find WKD Blue")
 
+
+    // Implementation of BinaryTree
     val zero = BinaryNode(0)
     val one = BinaryNode(1)
     val five = BinaryNode(5)
@@ -142,6 +150,35 @@ fun main() {
     nine.leftChild = eight
 
     val tree1 = seven
+
+
+    // BinarySearchTree
+    val bst = BinarySearchTree<Int>()
+    (0..4).forEach {
+        bst.insert(it)
+    }
+    println(bst)
+
+    val exampleTree = BinarySearchTree<Int>().apply {
+        insert(3)
+        insert(1)
+        insert(4)
+        insert(0)
+        insert(2)
+        insert(5)
+    }
+    println(exampleTree)
+
+    if (exampleTree.contains(5)) {
+        println("Found 5!")
+    } else {
+        println("Couldn't find 5")
+    }
+    println("Tree before removal:")
+    println(exampleTree)
+    exampleTree.remove(3)
+    println("Tree after removing root:")
+    println(exampleTree)
 }
 
 fun makeBeverageTree(): TreeNode<String> {
@@ -178,21 +215,5 @@ fun makeBeverageTree(): TreeNode<String> {
     return tree
 
     // Here using Binary search
-    val bst = BinarySearchTree<Int>()
-    (0..4).forEach {
-        bst.insert(it)
-    }
-    println(bst)
-
-    val exempleTree = BinarySearchTree<Int>().apply {
-        insert(3)
-        insert(1)
-        insert(4)
-        insert(0)
-        insert(2)
-        insert(5)
-    }
-
-    println(exempleTree)
 
 }
