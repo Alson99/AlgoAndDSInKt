@@ -3,6 +3,7 @@ import ru.als.dataStructures.linkedList.LinkedList
 import ru.als.dataStructures.linkedList.Node
 import ru.als.dataStructures.queue.ArrayListQueue
 import ru.als.dataStructures.stack.StackImpl
+import ru.als.dataStructures.trees.AVLNode
 import ru.als.dataStructures.trees.BinaryNode
 import ru.als.dataStructures.trees.BinarySearchTree
 import ru.als.dataStructures.trees.TreeNode
@@ -179,6 +180,15 @@ fun main() {
     exampleTree.remove(3)
     println("Tree after removing root:")
     println(exampleTree)
+
+
+    // AVLTrees
+  /*  val tree2 = AVLNode<Int>()
+    tree2.insert(15)
+    tree2.insert(10)
+    tree2.insert(16)
+    tree2.insert(18)
+    println(tree2)*/
 }
 
 fun makeBeverageTree(): TreeNode<String> {
