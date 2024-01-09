@@ -91,9 +91,11 @@ class AVLNode<T: Comparable<T>>(var value: T) {
             balanceNode.rightHeight) + 1
         return balanceNode
     }
+
     fun leafNodes(height: Int) : Int {
         return 2.0.pow(height).toInt()
     }
+
     fun nodes(height: Int) : Int {
         return 2.0.pow(height + 1).toInt() - 1
     }

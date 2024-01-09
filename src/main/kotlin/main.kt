@@ -189,6 +189,13 @@ fun main() {
     tree2.insert(16)
     tree2.insert(18)
     println(tree2)*/
+
+    // Let's implement Binary search
+    val array = arrayListOf(1,2,3,4,4,5)
+    val secondIndex = array.indexOf(2)
+    println(secondIndex)
+    val secondIndexBinary = array.binarySearch(secondIndex)
+    println(secondIndexBinary)
 }
 
 fun makeBeverageTree(): TreeNode<String> {
