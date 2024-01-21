@@ -12,6 +12,8 @@ class LinkedList<T : Any> : Iterable<T>, Collection<T>, MutableIterable<T>, Muta
         size = 0
     }
 
+    override fun isEmpty(): Boolean = true
+
     override fun addAll(elements: Collection<T>): Boolean {
         for (element in elements) {
             append(element)
@@ -37,10 +39,6 @@ class LinkedList<T : Any> : Iterable<T>, Collection<T>, MutableIterable<T>, Muta
         }
         return false
     }
-
-     override fun isEmpty(): Boolean {
-         return isEmpty()
-     }
 
     override fun iterator(): MutableIterator<T> {
         return LinkedListIterator(this)

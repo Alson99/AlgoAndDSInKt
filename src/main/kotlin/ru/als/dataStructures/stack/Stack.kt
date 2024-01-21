@@ -1,7 +1,5 @@
 package ru.als.dataStructures.stack
 
-import com.sun.org.apache.xpath.internal.operations.Bool
-
 interface Stack<T : Any> {
     fun push(element: T)
     fun pop(): T?
