@@ -3,7 +3,6 @@ import ru.als.dataStructures.linkedList.LinkedList
 import ru.als.dataStructures.linkedList.Node
 import ru.als.dataStructures.queue.ArrayListQueue
 import ru.als.dataStructures.stack.StackImpl
-import ru.als.dataStructures.trees.AVLNode
 import ru.als.dataStructures.trees.BinaryNode
 import ru.als.dataStructures.trees.BinarySearchTree
 import ru.als.dataStructures.trees.TreeNode
