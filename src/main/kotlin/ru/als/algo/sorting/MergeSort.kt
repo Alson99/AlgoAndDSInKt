@@ -1,4 +1,4 @@
-package ru.als.algo.merging
+package ru.als.algo.sorting
 
 class MergeSort {
 
